@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 validates_presence_of :bio
+has_many :videos, dependent: :destroy
 end

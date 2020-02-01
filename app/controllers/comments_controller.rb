@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+
+
 def create
  @video = Video.find(params[:video_id])
  #@video = current_user.video.find(params[:comment]

@@ -8,6 +8,7 @@
       <th>Video title</th>
       <th>Video content</th>
       <th>User ID</th>
+      <th>Number of comments</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= video.video_title %></td>
         <td><%= video.video_content %></td>
         <td><%= video.user_id %></td>
+        <td><%= video.comments.size %></td>
         <td><%= link_to 'Show', video %></td>
         <td><%= link_to 'Edit', edit_video_path(video) %></td>
         <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>

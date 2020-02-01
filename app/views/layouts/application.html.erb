@@ -11,6 +11,13 @@
 
   <body>
 
+<ul>
+  <li><%= link_to 'Homepage', root_path %></li>
+<li><%= link_to 'Videos', videos_path %></li>
+<li><%= link_to 'Edit user', edit_user_registration_path %></li>
+
+</ul>
+
     <% if user_signed_in? %>
   <li>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>

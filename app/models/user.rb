@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
 validates_presence_of :bio
 has_many :videos, dependent: :destroy
+has_many :comments, dependent: :destroy
 end

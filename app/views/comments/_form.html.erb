@@ -1,0 +1,16 @@
+<h3>Post a Comment</h3>
+
+<%= form_for [ @video, @comment ] do |f| %>
+  <p>
+
+  </p>
+  <p>
+    <%= f.label :your_comment %><br/>
+    <%= f.text_area :body %>
+      
+
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

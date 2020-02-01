@@ -13,7 +13,6 @@
 <h3>number of comments</h3>
 <%=  @video.comments.count %>
 
-
 <hr>
 
 <%=  @video.comments.inspect %>
@@ -23,20 +22,7 @@
 
 <p>Partial</p>
 
-<%= render 'videos/comment', collection: @video.comments.reverse%>
-<hr>
-
-<h2>Alle comments</h2>
-<% @video.comments.each do |c| %>
-  <p><%= c.body %></p>
-    <p>user id: <%= c.user_id %></p>
-    <p>Posted <%= distance_of_time_in_words(c.video.created_at, c.created_at) %> later</p>
-
-<% end %>
-
-<hr>
-
-
+<%= render 'videos/comment', collection: @video.comments%>
 <%= render partial: 'comments/form' %>
 
 

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-validates_presence_of :bio
+validates_presence_of :bio, :username
 has_many :videos, dependent: :destroy
 has_many :comments, dependent: :destroy
 end

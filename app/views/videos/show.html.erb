@@ -35,6 +35,7 @@
 <% @video.comments.each do |c| %>
   <p><%= c.body %></p>
     <p>user id: <%= c.user_id %></p>
+    <p>user id: <%= c.user.username %></p>
     <p>Posted <%= distance_of_time_in_words(c.video.created_at, c.created_at) %> later</p>
 
 <% end %>

@@ -2,6 +2,10 @@
 
 <p>Delete video?</p>
 
+<% if can? :manage, Video %>
+	<p>Visible only for superadmins and supervisors! </p>
+<% end %>
+
 
 <%= link_to 'Destroy', video_path, method: :delete, data: { confirm: 'Are you sure?' } %>
 

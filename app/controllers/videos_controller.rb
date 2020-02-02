@@ -2,6 +2,8 @@ class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
 before_action :authenticate_user!, :except => [:index]
+load_and_authorize_resource :except => [:index, :show]
+
 
   # GET /videos
   # GET /videos.json
@@ -14,6 +16,7 @@ before_action :authenticate_user!, :except => [:index]
   def show
     @comment = Comment.new
     @comment.video_id = @video.id
+    #authorize_resource :read, Video, :message => "Unable to read this article."
   end
 
   # GET /videos/new

@@ -23,6 +23,11 @@
     <%= form.file_field :video_content %>
   </div>
 
+  <div class="field" >
+    <%= form.label :"Select your thumbnail!" %>
+    <%= form.file_field :thumbnail %>
+  </div>
+
   <div class="actions">
     <%= form.submit "Uploaden", class: 'blackBtn'%>
 

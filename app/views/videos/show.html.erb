@@ -1,10 +1,11 @@
 <div class="formContainer">
 	<h1><%= @video.video_title %> </h1>
-	<p>	<strong>Video content:</strong> <%= @video.video_content %> </p>
 		<p>	<strong>Created by:</strong> <%= @video.user.username %> </p>
 		<p>	<strong>Published:</strong> <%= distance_of_time_in_words(@video.created_at,  Time.now) %> a go</p>
-	<img src="https://place-hold.it/600x400" alt="" >
 
+	<div class="thumbnail">
+	<%= image_tag(@video.thumbnail)%>
+	</div>
 
 
 		<div class="videoButtons">

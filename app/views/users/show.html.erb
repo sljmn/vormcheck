@@ -116,7 +116,7 @@
       <% if current_user == video.user %>
       <p><%= link_to 'Edit your video', edit_video_path(video) %> |
       <%= link_to 'Delete your video', video, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-
+    <%= image_tag(video.thumbnail)%>
         <% end %>
 
 </div>

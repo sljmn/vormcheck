@@ -76,6 +76,6 @@ load_and_authorize_resource :except => [:index, :show]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:video_title, :video_content)
+      params.require(:video).permit(:video_title, :video_content, :thumbnail)
     end
 end

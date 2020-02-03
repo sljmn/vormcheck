@@ -35,6 +35,13 @@
 
 
  }
+ header a {
+color:white;
+
+
+
+ }
+
 
  .header-wrapper {
    display: flex;
@@ -119,6 +126,7 @@
 .remember_me{
   display: block;
   text-align: right;
+  margin-top: -20px;
 }
 
 

@@ -1,49 +1,130 @@
-This is the user show page, for id <%= @videos.inspect %>
 
-<h2>Al my videos</h2>
+<h1 class="pageTitle">Your account</h1>
 
 
-<% @videos.each do |video| %>
+<div class="accountWrapper">
 
-<td><%= link_to 'Show', video %></td>
-
-<li><%= link_to video.video_title, video%></li>
-
-<%= video.video_content %>
-<hr>
-<li>Posted <%= distance_of_time_in_words(video.created_at, video.created_at) %> later</li>
-<hr>
-<% end%>
-
-<%= @videos.inspect %>
-
-<header>
-
-  <div class="header-wrapper container">
-
-  <div class="logo">
-    <h1><a href="/"> VormCheck</a> <span><i class="fas fa-dumbbell"></i>
-
-      </span></h1>
-  </div>
-
-  <div class="login">
-    <input class="whiteInputField" type="text" placeholder="Username">
-    <input class="whiteInputField" type="text" placeholder="Wachtwoord">
-    <button class="blackBtn">Login</button>
-    <a class="resetPassword" href="/register">Wachtwoord vergeten</a>
-  </div>
+<div class="avatar">
+  <img src="https://place-hold.it/190x150" alt="" >
 
 </div>
 
-</header>
-
-<div class="container">
-  <h1 class="pageTitle">Welkom in je account, ${userName} </h1>
-
-  <div class="heroHome">
 
 
-  </div>
+<div class="editAccount">
+<ul>
+  <li>Username: <%= @user.username%></li>
+  <li>Email: <%= @user.email%>
+</li>
+</ul>
+
+<h4 class="changeAccDetails">You can change your user details below</h4>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="passwordFields">
+
+    <b>Edit your username</b>
+
+      <div class="">
+        <%= f.label :username %><br />
+        <%= f.text_field :username, value: @user.username %>
+      </div>
+
+        <b>Edit your email</b>
+
+    <div class="account_field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, value: @user.email %>
+    </div>
+
+
+        <b>Change your password</b>
+    <div class="account_field">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% if @minimum_password_length %>
+
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+
+    <div class="account_field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+  <b>Edit your bio here</b>
+    <div class="accountBio">
+
+
+      <%= f.label :bio %><br />
+      <%= f.text_area :bio, value:@user.bio %>
+    </div>
+
+  <b>We need your current password to confirm your changes</b>
+    <div class="account_field">
+      <%= f.label :current_password %>
+      <%= f.password_field :current_password, autocomplete: "current-password" %>
+    </div>
+
+    <div class="actions">
+      <br>
+      <%= f.submit "Update",class:"blackBtn" %>
+    </div>
+    </div>
+
+
+
+    <% end %>
+</div>
+
+<div class="bio">
+  <h2>Your Bio</h2>
+  <%=@user.bio %>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="formContainer">
+<h2>Al your published videos</h2>
+  <div class="video_upload">
+  <%# <%= link_to 'New Video', new_video_path %>
+
+    <% @videos.each do |video| %>
+
+    <div class="single_video">
+
+      <h2><%= link_to video.video_title, video%></h2>
+      <p> Uploaded by  user: <%= video.user.username %></p>
+      <p>Comments: <%= video.comments.size %></p>
+      <p>Posted <%= distance_of_time_in_words(video.created_at, Time.now)  %> ago</p>
+
+      <% if current_user == video.user %>
+      <p><%= link_to 'Edit your video', edit_video_path(video) %> |
+      <%= link_to 'Delete your video', video, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+        <% end %>
+
+</div>
+
+
+        <% end %>
+
+
+</div>
 
 </div>

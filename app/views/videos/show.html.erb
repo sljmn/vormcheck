@@ -1,55 +1,56 @@
-<p id="notice"><%= notice %></p>
-
-<p>Delete video?</p>
-
-<% if can? :manage, Video %>
-	<p>Visible only for superadmins and supervisors! </p>
-<% end %>
-
-
-<%= link_to 'Destroy', video_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-<p>
-  <strong>Video title:</strong>
-  <%= @video.video_title %>
-</p>
-
-<p>
-  <strong>Video content:</strong>
-  <%= @video.video_content %>
-</p>
-
-<h3>number of comments</h3>
-<%=  @video.comments.count %>
-
-
-<hr>
-
-<%=  @video.comments.inspect %>
-
-
-<hr>
-
-<p>Partial</p>
-
-<%= render 'videos/comment', collection: @video.comments.reverse%>
-<hr>
-
-<h2>Alle comments</h2>
-<% @video.comments.each do |c| %>
-  <p><%= c.body %></p>
-    <p>user id: <%= c.user_id %></p>
-    <p>user id: <%= c.user.username %></p>
-    <p>Posted <%= distance_of_time_in_words(c.video.created_at, c.created_at) %> later</p>
-
-<% end %>
-
-<hr>
-
-
-<%= render partial: 'comments/form' %>
+<div class="formContainer">
+	<h1><%= @video.video_title %> </h1>
+	<p>	<strong>Video content:</strong> <%= @video.video_content %> </p>
+		<p>	<strong>Created by:</strong> <%= @video.user.username %> </p>
+		<p>	<strong>Published:</strong> <%= distance_of_time_in_words(@video.created_at,  Time.now) %> a go</p>
+	<img src="https://place-hold.it/600x400" alt="" >
 
 
 
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+		<div class="videoButtons">
+
+			<% if current_user == @video.user %>
+			<div class="editVideo">
+			<%= link_to 'Edit video', edit_video_path(@video) %>
+			</div>
+			<% end %>
+
+			<% if current_user == @video.user %>
+			<div class="editVideo">
+			<%= link_to 'Delete video', video_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</div>
+			<% end %>
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+	<div class="comments">
+		<h3>There is/ are <%=  @video.comments.count %> comment(s) on this video</h3>
+			<% @video.comments.each do |c| %>
+
+				<div class="singleComment">
+					<div class="username">
+
+		  	  <!-- <p>user id: <%= c.user_id %></p> -->
+		  	  <p>User: <%= c.user.username %></p>
+					</div>
+					<div class="commentContent">
+					<p><%= c.body %></p>
+		  	  <p>Posted <%= distance_of_time_in_words(c.video.created_at, c.created_at) %> later</p>
+					</div>
+					</div>
+					<% end %>
+		<%= render partial: 'comments/form' %>
+
+
+	</div>
+</div>

@@ -1,3 +1,111 @@
 // Place all the styles related to the Videos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+.formContainer{
+  margin: 0 auto;
+  text-align: center;
+
+  // border: 1px solid lightgrey;
+  width: 600px;
+  margin-top: 20px;
+  padding-top: 20px;
+  box-shadow: 2px 2px 40px rgba(124, 124, 124, 0.25);
+  margin-bottom: 100px;
+  }
+
+.field{
+  margin:20px;
+
+}
+
+
+#video_video_title, #video_video_content {
+    font-size: 18px;
+}
+
+
+
+input#video_video_title {
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+
+.video_upload {
+    text-align: left;
+    padding: 20px;
+
+}
+
+.single_video {
+  padding:10px;
+    margin-bottom: 20px;
+    background-color: #F4F4F4;
+    border-bottom: 1px solid #27A5FF;
+}
+
+.single_video p{
+  font-size: 13px;
+}
+
+.single_video a {
+  color:black;
+}
+
+.videoButtons {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.editVideo {
+    background-color: #33A7FF;
+    padding: 10px;
+    width: 140px;
+    border-radius: 17px;
+    color: white;
+    font-weight: 900;
+}
+
+.editVideo a {
+
+    color: white;
+
+}
+
+.comments {
+    text-align: left;
+    padding: 20px;
+    background-color: whitesmoke;
+
+}
+
+.comments h3{
+  padding-bottom: 20px;
+}
+
+.singleComment {
+
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.username {
+    background-color: #F5F5F5;
+    /* margin-right: 0px; */
+    width: 20%;
+}
+
+
+.commentContent {
+    margin-left: 20px;
+    background-color: white;
+    display: inline-block;
+    padding:10px;
+    width: 100%;
+}

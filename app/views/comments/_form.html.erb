@@ -1,6 +1,4 @@
-
-
-<h3>Post a Comment</h3>
+<h3>Post your comment</h3>
 
 <%= form_for [ @video, @comment ] do |f| %>
   <p>
@@ -13,6 +11,6 @@
 
   </p>
   <p>
-    <%= f.submit 'Submit' %>
+    <%= f.submit 'Submit', class: 'blackBtn' %>
   </p>
 <% end %>

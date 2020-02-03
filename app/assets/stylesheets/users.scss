@@ -1,0 +1,62 @@
+.accountWrapper {
+
+    display: flex;
+    width: 1040px;
+    margin: 0 auto;
+    margin-bottom:50px;
+
+}
+
+.editAccount {
+
+    margin-left: 20px;
+    margin-right: 20px;
+    width:700px;
+    border:1px solid #eaeaea;
+    padding:10px;
+
+
+
+}
+
+.bio {
+
+    background-color:
+
+    #F5F5F5;
+    padding: 20px;
+    height: fit-content;
+
+}
+
+
+
+.passwordFields {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+h4.changeAccDetails {
+  margin-top:  20px;
+  margin-bottom:  20px;
+  font-weight: normal;
+}
+
+.editAccount li{
+  display: block;
+}
+
+textarea#user_bio {
+    width: 100%;
+    height: 80px;
+    font-size: 16px;
+}
+
+input#user_email, input#user_password, input#user_username, input#user_password_confirmation, input#user_current_password{
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+}

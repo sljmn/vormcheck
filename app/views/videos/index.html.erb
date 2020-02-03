@@ -1,33 +1,32 @@
-<p id="notice"><%= notice %></p>
+<h1 class="pageTitle">All uploaded videos</h1>
 
-<h1>Videos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Video title</th>
-      <th>Video content</th>
-      <th>User ID</th>
-      <th>Number of comments</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="formContainer">
 
-  <tbody>
+  <div class="video_upload">
+  <%# <%= link_to 'New Video', new_video_path %>
+
     <% @videos.each do |video| %>
-      <tr>
-        <td><%= video.video_title %></td>
-        <td><%= video.video_content %></td>
-        <td><%= video.user_id %></td>
-        <td><%= video.comments.size %></td>
-        <td><%= link_to 'Show', video %></td>
-        <td><%= link_to 'Edit', edit_video_path(video) %></td>
-        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+    <div class="single_video">
 
-<%= link_to 'New Video', new_video_path %>
+      <h2><%= link_to video.video_title, video%></h2>
+      <p> Uploaded by  user: <%= video.user.username %></p>
+      <p>Comments: <%= video.comments.size %></p>
+      <p>Posted <%= distance_of_time_in_words(video.created_at, Time.now)  %> ago</p>
+
+      <% if current_user == video.user %>
+      <p><%= link_to 'Edit your video', edit_video_path(video) %> |
+      <%= link_to 'Delete your video', video, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+        <% end %>
+
+</div>
+
+
+        <% end %>
+
+
+</div>
+
+</div>

@@ -1,3 +1,5 @@
+<div class="formContainer" style="padding-bottom:20px">
+
 <%= form_with(model: video, local: true) do |form| %>
   <% if video.errors.any? %>
     <div id="error_explanation">
@@ -12,16 +14,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :video_title %>
+    <%= form.label :"Enter your video title"%>
     <%= form.text_field :video_title %>
   </div>
 
   <div class="field">
-    <%= form.label :video_content %>
-    <%= form.text_area :video_content %>
+    <%= form.label :"Select your video!" %>
+    <%= form.file_field :video_content %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Uploaden", class: 'blackBtn'%>
+
+
   </div>
 <% end %>
+
+<br>
+<%= link_to 'Back to all videos', videos_path %>
+
+</div>

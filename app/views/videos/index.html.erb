@@ -1,3 +1,18 @@
+
+<% if @videos.size == 0 %>
+<h1 class="pageTitle">No videos are uploaded yet</h1>
+<div class="formContainer">
+<p>Be the first to upload!</p>
+
+<%= button_to "Upload a video", new_video_path, class: 'blackBtn', method: :get%>
+
+
+
+  </div>
+
+
+<% else %>
+
 <h1 class="pageTitle">All uploaded videos</h1>
 
 
@@ -38,3 +53,5 @@
 </div>
 
 </div>
+
+<% end %>

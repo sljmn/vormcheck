@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
-before_action :authenticate_user!, :except => [:index]
+before_action :authenticate_user! #:except => [:index, :show]
 load_and_authorize_resource :except => [:index, :show]
 
 
@@ -21,7 +21,10 @@ load_and_authorize_resource :except => [:index, :show]
 
   # GET /videos/new
   def new
-    @video = current_user.videos.build
+    @video = Video.new
+    #@post = Video.find(params[:video_id])
+    #@video = current_user.videos.build(params[:video_id])
+    #@video.save!
   end
 
   # GET /videos/1/edit

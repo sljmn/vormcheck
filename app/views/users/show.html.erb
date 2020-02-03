@@ -99,19 +99,21 @@
 
 
 
-<div class="formContainer">
+<div class="allVideos">
 <h2>Al your published videos</h2>
-  <div class="video_upload">
+  <div class="video_upload_singleUser">
   <%# <%= link_to 'New Video', new_video_path %>
 
     <% @videos.each do |video| %>
 
-    <div class="single_video">
+    <div class="single_user_video">
 
       <h2><%= link_to video.video_title, video%></h2>
       <p> Uploaded by  user: <%= video.user.username %></p>
       <p>Comments: <%= video.comments.size %></p>
       <p>Posted <%= distance_of_time_in_words(video.created_at, Time.now)  %> ago</p>
+
+
 
       <% if current_user == video.user %>
       <p><%= link_to 'Edit your video', edit_video_path(video) %> |

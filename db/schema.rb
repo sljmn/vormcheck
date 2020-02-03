@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_03_151612) do
+ActiveRecord::Schema.define(version: 2020_02_03_154743) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(version: 2020_02_03_151612) do
 
   create_table "videos", force: :cascade do |t|
     t.string "video_title"
-    t.text "video_content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "thumbnail"
     t.index ["user_id"], name: "index_videos_on_user_id"
   end
 

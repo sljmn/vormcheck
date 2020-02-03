@@ -13,3 +13,494 @@
  *= require_tree .
  *= require_self
  */
+
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+ body {
+   font-family: 'Work Sans', sans-serif;
+
+
+ }
+
+ header {
+
+   height: 95px;
+   background-color: #32A8FF;
+
+
+
+ }
+
+ .header-wrapper {
+   display: flex;
+   justify-content: space-between;
+   padding-top: 30px;
+   padding-left: 20px;
+   padding-right: 20px;
+
+ }
+
+ .container {
+   width: 1080px;
+   margin: 0 auto;
+
+ }
+
+ .logo {
+   color: white;
+   letter-spacing: -1.2px;
+   font-weight: 600;
+   font-size: 20px;
+
+ }
+
+
+ .logo a {
+   color: white;
+   text-decoration: none;
+
+ }
+
+ .logo a:hover {
+   text-decoration: underline;
+ }
+
+ .whiteInputField {
+   width: 200px;
+   height: 35px;
+   border-radius: 8px;
+   background-color: #F2F2F2;
+   font-size: 14px;
+   text-align: center;
+   border: none;
+   margin-right: 5px;
+
+ }
+
+ .blackBtn {
+   width: 105px;
+   height: 35px;
+   border-radius: 8px;
+   background-color: #000;
+   font-size: 14px;
+   color: white;
+   text-align: center;
+   border: none;
+
+
+ }
+
+
+
+ .resetPassword:active,
+ .resetPassword:hover,
+ .resetPassword:visited {
+   color: white;
+ }
+
+ .resetPassword {
+   display: block;
+   font-size: 12px;
+   text-align: right;
+   margin-top: 10px;
+ }
+
+
+ form#new_user {
+     display: flex;
+     /* width: 400px; */
+ }
+
+.remember_me{
+  display: block;
+  text-align: right;
+}
+
+
+
+
+ .heroHome::after {
+   content: "";
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background-image: url(./assets/section-img-sport.png);
+   width: 100%;
+   height: 100%;
+   background-size: auto;
+   background-position: center;
+   opacity: 0.1;
+   z-index: -1;
+   margin-top: -90px;
+   background-repeat: no-repeat;
+
+ }
+
+ .pageTitle {
+   opacity: 1.0 !important;
+   padding-top: 20px;
+   font-size: 40px;
+   color: black;
+
+   width: 100%;
+   margin: 0 auto;
+   text-align: center;
+
+
+ }
+
+ .signupWrapper {
+   display: flex;
+   justify-content: space-between;
+   padding-top: 50px;
+
+
+   opacity: 1;
+   z-index: 100000;
+   width: 900px;
+   margin-bottom: 20px;
+   padding-left: 10%;
+   padding-right: 10%;
+   padding-bottom: 30px
+ }
+
+ .sporters {
+   width: 275px;
+   height: 290px;
+   background-color: #fff;
+   padding-top: 20px;
+   line-height: 40px;
+   box-shadow: 2px 2px 40px rgba(124, 124, 124, 0.25);
+
+
+
+
+ }
+
+ .sporters h3 {
+   padding-left: 20px;
+ }
+
+ .sporters ul li {
+   display: block;
+   padding-left: 20px;
+
+ }
+
+ .personalTrainers {
+   width: 275px;
+   height: 290px;
+   box-shadow: 2px 2px 40px rgba(124, 124, 124, 0.25);
+   background-color: #fff;
+   padding-top: 20px;
+   line-height: 40px;
+   margin-right: -70px;
+ }
+
+ .personalTrainers h3 {
+   padding-left: 20px;
+ }
+
+ .personalTrainers ul li {
+   display: block;
+   padding-left: 20px;
+ }
+
+
+ .sporters:hover,
+ .personalTrainers:hover {
+   background-color: #E6E6E6;
+   transition: 0.91s;
+
+ }
+
+ .sporterBtn {
+   display: block;
+   width: 90%;
+   height: 55px;
+   border-radius: 8px;
+   background-color: #32A8FF;
+   font-size: 14px;
+   color: white;
+   text-align: center;
+   border: none;
+   margin-top: 40px;
+   margin-left: 15px;
+   font-size: 16px;
+   font-weight: 700;
+ }
+
+ .professionalBtn {
+   display: block;
+   width: 90%;
+   height: 55px;
+   border-radius: 8px;
+   background-color: #1C2C49;
+   font-size: 14px;
+   color: white;
+   text-align: center;
+   border: none;
+   margin-top: 40px;
+   font-size: 16px;
+   font-weight: 700;
+   margin-left: 15px;
+   line-height: 20px;
+ }
+
+ a.professionalBtn {
+   width: 80%;
+   padding-top: 10px;
+ }
+
+
+ footer {
+   background-color: #E6E6E6;
+   padding-top: 50px;
+   padding-bottom: 100px;
+   /* margin-top: -100px; */
+   padding-left: 20px;
+   padding-right: 20px;
+   height: 55vh;
+
+
+ }
+
+ footer h2 {
+
+   padding-bottom: 20px;
+   padding-top: 20px;
+ }
+
+ /* RESPSONSIVE */
+
+ @media only screen and (max-width: 600px) {
+
+   /* *{
+     border:1px solid red;
+   } */
+
+   header {
+     height: 100%;
+     width: 100%;
+     background-color: #32A8FF;
+     padding-bottom: 20px;
+   }
+
+   .logo {
+     padding-bottom: 20px;
+     color: white;
+
+   }
+
+
+
+
+
+   .header-wrapper {
+
+     display: flex;
+     flex-direction: column;
+
+
+   }
+
+   .resetPassword {
+     display: flex;
+     justify-content: flex-start;
+
+   }
+
+   .container {
+
+     width: 100%;
+     margin: 0 auto;
+   }
+
+   .pageTitle {
+     opacity: 1.0 !important;
+     padding-top: 20px;
+     font-size: 40px;
+     color: black;
+     width: 80%;
+     text-align: left;
+
+
+   }
+
+
+   .signupWrapper {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding-top: 50px;
+
+
+     opacity: 1;
+     z-index: 100000;
+     width: 100%;
+     margin-bottom: 20px;
+     padding-left: 10%;
+     padding-right: 10%;
+     padding-bottom: 30px
+   }
+
+   .sporters {
+     width: 100%;
+     height: 290px;
+     background-color: #fff;
+     padding-top: 20px;
+     line-height: 40px;
+     box-shadow: 2px 2px 40px rgba(124, 124, 124, 0.25);
+     margin-bottom: 50px;
+
+
+
+
+   }
+
+   .personalTrainers {
+     width: 100%;
+     height: 290px;
+     box-shadow: 2px 2px 40px rgba(124, 124, 124, 0.25);
+     background-color: #fff;
+     padding-top: 20px;
+     line-height: 40px;
+     margin-right: -70px;
+   }
+
+   .heroHome::after {
+     content: "";
+     display: block;
+     position: absolute;
+     top: -200px;
+     left: 0;
+     background-image: url(./assets/section-img-sport.png);
+     width: 100%;
+     height: 100%;
+     background-size: contain;
+     background-position: center;
+     opacity: 0.1;
+     z-index: -1;
+     background-repeat: no-repeat;
+
+   }
+
+
+
+
+ }
+
+
+ /* REGISTER PAGE */
+
+ .registrationContainer {
+
+
+   width: 90%;
+   display: flex;
+   justify-content: space-around;
+   margin: 50px;
+   padding: 20px;
+
+
+ }
+
+ .registrationContainer h3{
+   margin-bottom:30px;
+ }
+
+ .registerArea {
+
+   width:40%;
+ border:1px solid black;
+   padding:10px;
+   background-color: #fff;
+
+
+
+
+ }
+
+ .loginArea {
+
+   border:1px solid black;
+   padding:10px;
+   width:40%;
+   background-color: #fff;
+
+ }
+
+ /* .registrationContainer input[type="text"], input[type="password"]{
+ border:1px solid black;
+ width: 100%;
+ height: 25px;
+ padding:6px;
+ margin-bottom:10px;
+ font-size: 14px;
+
+ } */
+
+ .registerBtns {
+   width: 100%;
+   height: 35px;
+   border-radius: 8px;
+   background-color: #000;
+   font-size: 14px;
+   color: white;
+   text-align: center;
+   border: none;
+   margin-top:10px
+
+ }
+
+
+
+ .registrationContainer input[type="text"]::placeholder, input[type="password"]::placeholder{
+ font-size: 14px;
+
+   }
+
+
+
+  p.alert.alert-danger {
+      background-color: #fa482f;
+      font-size: 18px;
+      text-align: center;
+      color: white;
+      padding: 20px;
+  }
+
+   .alert.alert-success{
+     background-color: #289112;
+     font-size: 18px;
+     text-align: center;
+     color: white;
+     padding: 20px;
+   }
+
+
+
+
+   @media only screen and (max-width: 600px) {
+
+     .registrationContainer{
+
+       flex-direction: column;
+       margin: 0px;
+     }
+
+     .registerArea {
+ width: 100%;
+     }
+
+     .loginArea{
+       width: 100%;
+     }
+
+   }

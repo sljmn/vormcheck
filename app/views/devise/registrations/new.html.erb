@@ -41,3 +41,85 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
+
+  <header>
+
+    <div class="header-wrapper container">
+
+    <div class="logo">
+      <h1><a href="/"> VormCheck</a> <span><i class="fas fa-dumbbell"></i>
+
+        </span></h1>
+    </div>
+
+    <div class="login">
+      <input class="whiteInputField" type="text" placeholder="Username">
+      <input class="whiteInputField" type="text" placeholder="Wachtwoord">
+      <button class="blackBtn">Login</button>
+      <a class="resetPassword" href="/register">Wachtwoord vergeten</a>
+    </div>
+
+  </div>
+
+  </header>
+
+  <div class="container">
+    <h1 class="pageTitle">Registreer je of login</h1>
+
+    <div class="heroHome">
+
+      <div class="registrationContainer">
+        <div class="registerArea">
+          <h3>Nog geen lid? Maak een account aan!</h3>
+
+          <form action="/register-user" method="POST">
+
+              <label>Username</label>
+              <input name="userNameRegistration" type="text" placeholder="BeastMode" /> <br>
+
+              <label>Email adres</label>
+              <input name="emailRegistration" type="text" placeholder="jan@beastmode.com" />
+              <br>
+
+              <label>Password</label>
+              <input name="passwordRegistration" type="password" placeholder="********" /> <br>
+
+
+              <button type="submit" class="registerBtns"> Inschrijven! </button>
+
+
+          </form>
+
+
+
+        </div>
+
+        <div class="loginArea">
+            <h3>Ben je al lid? Log nu in!</h3>
+
+            <form action="/account" method="GET">
+
+                <label>Username</label>
+                <input name="usernameLogin" type="text" placeholder="BeastMode" /> <br>
+
+
+                <label>Password</label>
+                <input name="usernamePassword" type="password" placeholder="********" /> <br>
+
+
+                <button type="submit" class="registerBtns"> Login </button>
+
+
+            </form>
+
+
+
+          </div>
+
+
+      </div>
+    </div>
+
+  </div>

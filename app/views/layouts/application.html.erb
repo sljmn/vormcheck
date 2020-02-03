@@ -7,33 +7,98 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/d3bba61ab3.js" crossorigin="anonymous"></script>
+
   </head>
+
+
 
   <body>
 
-<ul>
-  <li><%= link_to 'Homepage', root_path %></li>
-<li><%= link_to 'Videos', videos_path %></li>
-<li><%= link_to 'Edit user', user_path(current_user) %></li>
+<header>
 
-</ul>
 
-    <% if user_signed_in? %>
-  <li>
+  <div class="header-wrapper container">
+
+  <div class="logo">
+    <h1><a href="/"> VormCheck</a> <span><i class="fas fa-dumbbell"></i>
+
+      </span></h1>
+  </div>
+
+  <% if user_signed_in? %>
+
+<%= link_to "Video uploaden", new_video_path %>
+  <%= link_to "See all videos", videos_url %>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  </li>
+
+
+
 <% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path) %>
-  </li>
+<div class="login">
+  <!-- <input class="whiteInputField" type="text" placeholder="Username">
+  <input class="whiteInputField" type="text" placeholder="Wachtwoord">
+  <button class="blackBtn">Login</button>
+  <a class="resetPassword" href="/register">Wachtwoord vergeten</a> -->
+
+<div class="user_password">
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="whiteInputField">
+<!--   <%= f.label :email %><br />-->
+      <%= f.email_field :email, autocomplete: "email", class: 'whiteInputField', placeholder: "Email "  %>
+    </div>
+
+
+    <div class="whiteInputField">
+  <!--     <%= f.label :password %><br /> -->
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: 'whiteInputField' %>
+    </div>
+
+
+
+    <div class="actions blackBtn">
+      <%= f.submit "Log in", class: 'blackBtn'%>
+    </div>
+
+    </div>
+
+    <div class="remember_me">
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+</div>
+  <% end %>
+
+  <%# <%= render "devise/shared/links" %>
+
+
+
+</div>
+
 <% end %>
 
-    <% if notice %>
+
+
+
+</div>
+
+</header>
+
+  <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
+  <% end %>
+  <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+  <% end %>
+
+
 
 
     <%= yield %>

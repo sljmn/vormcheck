@@ -10,6 +10,7 @@ def create
  redirect_to video_path(@video)
  @comment.save
 
+
  end
 
 end

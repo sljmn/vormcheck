@@ -10,7 +10,7 @@
 </div>
 
 
-
+<% if current_user.id  == User.find(params[:id]).id  %>
 <div class="editAccount">
 <ul>
   <li>Username: <%= @user.username%></li>
@@ -138,6 +138,82 @@
 
 </div>
 <% end %>
+<% else %>
+<div class="editAccount">
+<ul>
+  <li>Username: <%= @user.username%></li>
+  <li>Email: <%= @user.email%>
+</li>
+</ul>
+
+
+
+
+
+
+</div>
+
+<div class="bio">
+  <h2>Your Bio</h2>
+  <%=@user.bio %>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="allVideos">
+
+
+
+<% if @videos.size == 0 %>
+<h2>There are no videos yet posted.</h2>
+
+<%= link_to "Go and upload a video", new_video_url %>
+
+<% else %>
+<h2>Al your published videos</h2>
+  <div class="video_upload_singleUser">
+  <%# <%= link_to 'New Video', new_video_path %>
+
+    <% @videos.each do |video| %>
+
+    <div class="single_user_video">
+
+      <h2><%= link_to video.video_title, video%></h2>
+      <p> Uploaded by  user: <%= video.user.username %></p>
+      <p>Comments: <%= video.comments.size %></p>
+      <p>Posted <%= distance_of_time_in_words(video.created_at, Time.now)  %> ago</p>
+
+
+
+      <% if current_user == video.user %>
+      <p><%= link_to 'Edit your video', edit_video_path(video) %> |
+      <%= link_to 'Delete your video', video, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <%= image_tag(video.thumbnail)%>
+        <% end %>
+
+</div>
+
+
+        <% end %>
+
+
+</div>
+<% end %>
+<%end %>
+
+
 
 
 

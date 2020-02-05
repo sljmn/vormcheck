@@ -74,3 +74,10 @@ input#user_email, input#user_password, input#user_username, input#user_password_
 .formfield {
         width: 100%;
     }
+
+
+.formContainer li {
+        text-align: left;
+        display: block;
+        padding-left: 20px;
+    }

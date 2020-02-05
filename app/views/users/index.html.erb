@@ -1,0 +1,40 @@
+
+<% if @users.size == 0 %>
+<h1 class="pageTitle">No users are registered, yet!</h1>
+<div class="formContainer">
+<p>Be the first to upload!</p>
+
+<%= button_to "Upload a video", new_video_path, class: 'blackBtn', method: :get%>
+
+
+
+  </div>
+
+
+<% else %>
+
+<h1 class="pageTitle">All registered users</h1>
+
+
+<div class="formContainer">
+
+
+  <%# <%= link_to 'New Video', new_video_path %>
+
+    <% @users.each do |u| %>
+    <ul>
+    <li><%= link_to u.username, u %></li>
+    </ul>
+
+
+
+
+
+        <% end %>
+
+
+</div>
+
+</div>
+
+<% end %>
